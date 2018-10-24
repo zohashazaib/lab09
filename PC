@@ -1,0 +1,21 @@
+module Program_Counter
+  
+(
+  input [63:0] PC_In,
+  input [63:0] PC_Out,
+  input clk,
+  input reset
+);
+
+always @ (posedge reset or posedge clk)
+begin
+  
+if (reset)
+  PC_Out = 64'h0000000000000000;
+
+else
+  PC_Out = PC_In;
+  
+end
+
+endmodule
